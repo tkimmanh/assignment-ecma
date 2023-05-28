@@ -10,6 +10,6 @@ router.on('/',() => render(HomePage,app));
 router.on('/about',() => render(AboutPage,app))
 router.on('/blog',() => render(BlogPage,app))
 router.on('/blog/:id',({data}) => render(() => DetailBlogPage(data.id),app))
-// console.log(NotFound);
+
 router.notFound(() => render(NotFound, app));
 router.resolve();

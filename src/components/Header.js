@@ -18,8 +18,8 @@ export const Header = () => {
       <div class="main-nav mt-4">
         <a
           class="font-normal text-[#49505780] hover:text-black mx-2"
-          href=""
-          >Works</a
+          href="/"
+          >Home</a
         >
         <a
           class="font-normal text-[#49505780] hover:text-black mx-2"

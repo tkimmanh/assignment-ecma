@@ -2,24 +2,37 @@ import { data } from "../../data"
 import { Header } from "../components/Header";
 import dayjs from "dayjs";
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { useEffect, useState } from "../utilities";
+import { getOnePost } from "../api/posts";
 dayjs.extend(relativeTime)
 
 const DetailBlogPage = (id) => {
-    const blog = data.find((data) => data.id === +id)
-    if(!blog) return 0;
+  const [post , setPost ] = useState([])
+  useEffect(() => {
+    (async () => {
+      try {
+        const post = setPost(await getOnePost(id))
+        if(!post) return 0;
+      } catch (error) {
+        console.log(error);
+      }
+    })()
+  },[])
+    // const post = data.find((data) => data.id === +id)
+   
     return `
     ${Header()}
-    <div class="container max-w-5xl px-12 py-7 leading-loose mx-auto font-[Poppins] ">
-    <h1 class="font-bold text-3xl my-3">${blog.title}</h1>
-    <span class="font-normal text-[#49505780] mb-2">Date : ${dayjs(blog.createAt).fromNow()}</span>
+    <div class="container max-w-6xl px-12 py-7 leading-loose mx-auto font-[Poppins] ">
+    <h1 class="font-bold text-3xl my-3">${post.title}</h1>
+    <span class="font-normal text-[#49505780] mb-2">Date : ${dayjs(post.createdAt).fromNow()}</span>
     <p>
-        ${blog.content1}
+        ${post.content1}
   </p>
-    <img class="py-4" src="${blog.image}" alt="">
+    <img class="py-4" src="${post.image}" alt="">
   <p>
-   ${blog.content2}
+   ${post.content2}
   </p>
-    <h1 class="text-center my-6 text-xl">Author : ${blog.author}</h1>     
+    <h1 class="text-center my-6 text-xl">Author : ${post.author}</h1>     
     </div>
     `
 }

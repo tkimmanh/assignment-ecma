@@ -1,18 +1,30 @@
-import { data } from "../../data";
-import {truncateText } from '../utilities/common'
+import {  timeLines, truncateText } from "../utilities/common";
 import Footer from "../components/Footer";
 import { Header } from "../components/Header";
 import dayjs from "dayjs";
-import relativeTime from 'dayjs/plugin/relativeTime'
-dayjs.extend(relativeTime)
+import relativeTime from "dayjs/plugin/relativeTime";
+import { useEffect ,  useState } from "../utilities";
+import { getAllPost } from "../api/posts";
+dayjs.extend(relativeTime);
 
 const HomePage = () => {
-  return `
+  const [posts, setPost] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const posts = await getAllPost('?_limit=3');
+        setPost(posts);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
   
+  return `
     ${Header()}
     <main class="lg:max-w-7xl md:max-w-5xl md:px-2 my-0 mx-auto">
     <!-- main-contaier -->
-    <div class="main-contaier">
+    <div class="main-container">
     <!-- background -->
     <div class="background mx-auto lg:max-w-6xl md:max-w-4xl max-w-2xl">
       <div class="">
@@ -88,8 +100,8 @@ const HomePage = () => {
       <ul
         class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full mx-auto"
       >
-       ${data.map((blog) => {
-        return `
+       ${posts.map((blog) => {
+          return `
         <li class="blog max-w-full m-5 mx-4">
         <div class="relative">
         <img
@@ -100,11 +112,13 @@ const HomePage = () => {
         <h2
           class="category absolute top-5 text-white right-5 bg-[#2125294D] px-2 font-semibold"
         >
-         ${blog.category}
+         ${blog.categories}
         </h2>
       </div>
       <div class="date my-3">
-        <span class="font-thin">${dayjs(blog.createAt).format('DD.MM.YYYY')}</span>
+        <span class="font-thin">${dayjs(blog.createdAt).format(
+          "DD.MM.YYYY"
+        )}</span>
       </div>
       <div
         class="title hover:underline font-bold font-[Poppins] text-xl text-[#21243D] my-3"
@@ -113,7 +127,7 @@ const HomePage = () => {
       </div>
       <div class="desc">
         <p class="font-thin text-sm">
-          ${truncateText(blog.content1,90)}
+          ${truncateText(blog.content1, 90)}
         </p>
       </div>
       <div class="spaceX border-t-2 mt-2"></div>
@@ -123,8 +137,9 @@ const HomePage = () => {
         </h2>
       </div>
     </li>
-        `
-       }).join('')}
+        `;
+         })
+         .join("")}
       </ul>
       <!-- end box blog -->
       <ul class="flex justify-center">

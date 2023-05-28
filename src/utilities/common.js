@@ -4,7 +4,7 @@ export function truncateText(text, maxLength) {
 }
 
 
-function timeLines() {
+export function timeLines() {
   const timeLine = document.querySelector(".box-timeline");
   const btnTimeLine = document.querySelector(".open-timeline");
   const removeTimeLine = document.querySelector(".remove-timeLine");
