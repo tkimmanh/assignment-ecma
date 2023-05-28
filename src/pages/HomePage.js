@@ -1,9 +1,9 @@
-import {  timeLines, truncateText } from "../utilities/common";
+import { animateCounters, truncateText } from "../utilities/common";
 import Footer from "../components/Footer";
 import { Header } from "../components/Header";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { useEffect ,  useState } from "../utilities";
+import { useEffect, useState } from "../utilities";
 import { getAllPost } from "../api/posts";
 dayjs.extend(relativeTime);
 
@@ -12,14 +12,51 @@ const HomePage = () => {
   useEffect(() => {
     (async () => {
       try {
-        const posts = await getAllPost('?_limit=3');
+        const posts = await getAllPost("?_limit=3");
         setPost(posts);
       } catch (error) {
         console.log(error);
       }
     })();
   }, []);
-  
+useEffect(() => {
+  try {
+    const counters = document.querySelectorAll(".value");
+    const speed = 300;
+    counters.forEach((counter) => {
+      const animate = () => {
+        const value = +counter.getAttribute("akhi");
+        const data = +counter.innerText;
+        const time = value / speed;
+        if (data < value) {
+          counter.innerText = Math.ceil(data + time);
+          setTimeout(animate, 1);
+        } else {
+          counter.innerText = value;
+        }
+      };
+    animate();
+    });
+  } catch (error) {
+    console.log(error);
+  }
+})
+ 
+useEffect(() =>{
+  try {
+  const timeLine = document.querySelector('.box-timeline');
+  const btnTimeLine = document.querySelector('.open-timeline');
+  const removeTimeLine = document.querySelector('.remove-timeLine')
+  btnTimeLine.addEventListener('click',function() {
+    timeLine.classList.add('left-0')
+  })
+  removeTimeLine.addEventListener('click',function(){
+    timeLine.classList.remove('left-0')
+  })
+  } catch (error) {
+   console.log(error);
+  }
+ })
   return `
     ${Header()}
     <main class="lg:max-w-7xl md:max-w-5xl md:px-2 my-0 mx-auto">
@@ -63,7 +100,7 @@ const HomePage = () => {
       </div>
     </div>
     <!-- incrementing counter -->
- 
+
     <div>   
     <div class="content max-w-7xl mx-3 lg:mx-0 min-h-[200px] lg:flex md:flex md:justify-evenly md:items-center lg:items-center lg:justify-around bg-gradient-to-r from-purple-400 to-pink-600">
 
@@ -100,8 +137,9 @@ const HomePage = () => {
       <ul
         class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full mx-auto"
       >
-       ${posts.map((blog) => {
-          return `
+       ${posts
+         .map((blog) => {
+           return `
         <li class="blog max-w-full m-5 mx-4">
         <div class="relative">
         <img
@@ -157,7 +195,7 @@ const HomePage = () => {
       </ul>
     </div>
    <!-- time line -->
-<div class="box-timeline bg-white hidden lg:block left-[-2000px] transition-all duration-500 ease-linear w-4xl h-screen fixed mx-auto bottom-0 top-0 py-4 overflow-y-scroll ">
+<div class="box-timeline bg-white hidden left-[-2000px] transition-all duration-500 ease-linear w-4xl h-screen fixed mx-auto bottom-0 top-0 py-4 overflow-y-scroll ">
 <div class="float-right cursor-pointer p-5 inline">
 <box-icon class="remove-timeLine" name='x'></box-icon>
 </div>
