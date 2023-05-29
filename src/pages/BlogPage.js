@@ -78,8 +78,8 @@ const BlogPage = () => {
   >
     <a href="/blog/${blog.id}">${blog.title}</a>
   </div>
-  <div class="desc">
-    <p class="font-thin text-sm">
+  <div class="desc font-thin text-sm">
+    <p class="">
       ${truncateText(blog.content1, 90)}
     </p>
   </div>

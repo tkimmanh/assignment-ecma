@@ -98,6 +98,17 @@
       "content2": "",
       "createdAt": "1685172099189",
       "updatedAt": "1685172099189"
+    },
+    {
+      "title": "San pham nay hoi bi hay",
+      "content1": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quidem commodi illum. Distinctio maxime voluptatum ratione corrupti pariatur quas debitis nulla blanditiis sint. Nam mollitia ex quaerat at nesciunt expedita distinctio ducimus, amet maxime accusamus repellendus molestiae, error quibusdam? Dolorem dolore magnam ipsum vel nihil aliquid perspiciatis quo saepe! Earum.</p>",
+      "content2": "<blockquote><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quidem commodi illum. Distinctio maxime voluptatum ratione corrupti pariatur quas debitis nulla blanditiis sint. Nam mollitia ex quaerat at nesciunt expedita distinctio ducimus, amet maxime accusamus repellendus molestiae, error quibusdam? Dolorem dolore magnam ipsum vel nihil aliquid perspiciatis quo saepe! Earum.</p><figure class=\"table\"><table><tbody><tr><td>X</td><td>&nbsp;</td><td>O</td><td>&nbsp;</td><td>&nbsp;</td><td>O</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>O</td><td>O</td><td>&nbsp;</td><td>X</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>X</td><td>&nbsp;</td><td>O</td><td>X</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>X</td><td>X</td><td>O</td><td>X</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>O</td><td>O</td><td>O</td><td>X</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>X</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure></blockquote><p>&nbsp; &nbsp; &nbsp; &nbsp;link : <a href=\"google.com\">google.com</a></p>",
+      "author": "Moanh",
+      "image": [
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685378001/ECMA/secytztakpjosrpim8dx.jpg"
+      ],
+      "createdAt": 1685377992522,
+      "id": 10
     }
   ]
 }

@@ -13,5 +13,6 @@ router.on('/blog',() => render(BlogPage,app))
 router.on('/blog/:id',({data}) => render(() => DetailBlogPage(data.id),app))
 
 router.on('admin/blog/add',() => render(AddPostPage,app));
+
 router.notFound(() => render(NotFound, app));
 router.resolve();

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { addNewPosts } from "../../api/posts";
 import HeaderAdmin from "../../components/admin/Header-Admin";
 import { useEffect , router } from "../../utilities";
@@ -13,6 +14,7 @@ const AddPostPage = () => {
         console.error(error);
       });
   });
+
   useEffect(() => {
     const form = document.querySelector(".form-add");
     const postTitle = document.querySelector(".title-input");
@@ -20,23 +22,47 @@ const AddPostPage = () => {
     const postImage = document.querySelector(".image-input");
     const postContent2 = document.querySelector(".content2-input");
     const postAuthor = document.querySelector(".author-input");
-    console.log(postAuthor);
-    form.addEventListener("submit", function (e) {
+    const uploadFile = async (files) => {
+      if(files) {
+        const CLOUD_NAME = 'dxg4vjwru'
+        const PRESET_NAME = 'upload-ecma'
+        const FOLDER_NAME = 'ECMA'
+        const urls = [];
+        const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+    
+        const fromData = new FormData()
+        fromData.append('upload_preset',PRESET_NAME)
+        fromData.append('folder',FOLDER_NAME)
+        for(const file of files) {
+          fromData.append('file',file)
+         const response = await axios.post(api,fromData,{
+            headers : {
+              'Content-Type' : 'multipart/from-data',
+            },
+          })
+          urls.push(response.data.secure_url)
+        }
+        return urls
+      }
+    } 
+    form.addEventListener("submit",async function (e) {
       e.preventDefault();
+      const urls = await uploadFile(postImage.files)
       const newPost = {
         title: postTitle.value,
         content1: postContent1.value,
         content2: postContent2.value,
         author: postAuthor.value,
+        image : urls,
         createdAt: Date.now(),
       };
-      addNewPosts(newPost)
-        .then(() => {
-          router.navigate('/blog')
-        })
-        .catch((error) => console.log(error));
+      addNewPosts(newPost).then(() => {
+          router.navigate('/blog') 
+        }).catch((error) => console.log(error));
     });
   });
+
+
   return ` 
     ${HeaderAdmin()}
     <div class="max-w-5xl mx-auto">
@@ -49,7 +75,7 @@ const AddPostPage = () => {
     <textarea class="content1-input" name="" id="editor" cols="30" rows="10"></textarea>
      
     <label class=" block my-4 text-sm font-medium text-gray-700"> Image </label>
-    <input type="file" class="image-input">
+    <input type="file" multiple class="image-input">
      
     
     <label class=" block my-4 text-sm font-medium text-gray-700"> Content 2 </label>
