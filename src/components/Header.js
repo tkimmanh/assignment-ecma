@@ -1,8 +1,5 @@
 import { useEffect } from '../utilities'
 export const Header = () => {
-  // useEffect(() => {
-  //   console.log(document.querySelector('.header-container'))
-  // })
     return `
     <header>
     <div class="header-container flex justify-between my-2 lg:max-w-7xl mx-auto">

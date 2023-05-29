@@ -6,8 +6,8 @@ export const getAllPost = (params) => {
 export const getOnePost = (id) => {
     return instance.get(`posts/${id}`)
 }
-export const addPosts = (posts) => {
-    return instance.post(`post`,posts)
+export const addNewPosts = (posts) => {
+    return instance.post(`posts`,posts)
 }
 export const updatePost = (posts) => {
     return instance.put(`posts/${posts.id}`,posts)

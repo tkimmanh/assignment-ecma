@@ -1,4 +1,3 @@
-
 export function truncateText(text, maxLength) {
   if(!text) return;
   text = text.trim();

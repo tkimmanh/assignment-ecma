@@ -1,9 +1,9 @@
-import { data } from "../../data"
 import { Header } from "../components/Header";
 import dayjs from "dayjs";
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { useEffect, useState } from "../utilities";
 import { getOnePost } from "../api/posts";
+import Footer from "../components/Footer";
 dayjs.extend(relativeTime)
 
 const DetailBlogPage = (id) => {
@@ -34,6 +34,7 @@ const DetailBlogPage = (id) => {
   </p>
     <h1 class="text-center my-6 text-xl">Author : ${post.author}</h1>     
     </div>
+    ${Footer()}
     `
 }
 export default DetailBlogPage;

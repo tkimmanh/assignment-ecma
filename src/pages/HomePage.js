@@ -1,4 +1,4 @@
-import { animateCounters, truncateText } from "../utilities/common";
+import { truncateText } from "../utilities/common";
 import Footer from "../components/Footer";
 import { Header } from "../components/Header";
 import dayjs from "dayjs";
@@ -19,44 +19,46 @@ const HomePage = () => {
       }
     })();
   }, []);
-useEffect(() => {
-  try {
-    const counters = document.querySelectorAll(".value");
-    const speed = 300;
-    counters.forEach((counter) => {
-      const animate = () => {
-        const value = +counter.getAttribute("akhi");
-        const data = +counter.innerText;
-        const time = value / speed;
-        if (data < value) {
-          counter.innerText = Math.ceil(data + time);
-          setTimeout(animate, 1);
-        } else {
-          counter.innerText = value;
-        }
-      };
-    animate();
-    });
-  } catch (error) {
-    console.log(error);
-  }
-})
- 
-useEffect(() =>{
-  try {
-  const timeLine = document.querySelector('.box-timeline');
-  const btnTimeLine = document.querySelector('.open-timeline');
-  const removeTimeLine = document.querySelector('.remove-timeLine')
-  btnTimeLine.addEventListener('click',function() {
-    timeLine.classList.add('left-0')
-  })
-  removeTimeLine.addEventListener('click',function(){
-    timeLine.classList.remove('left-0')
-  })
-  } catch (error) {
-   console.log(error);
-  }
- })
+
+  useEffect(() => {
+    try {
+      const counters = document.querySelectorAll(".value");
+      const speed = 300;
+      counters.forEach((counter) => {
+        const animate = () => {
+          const value = +counter.getAttribute("akhi");
+          const data = +counter.innerText;
+          const time = value / speed;
+          if (data < value) {
+            counter.innerText = Math.ceil(data + time);
+            setTimeout(animate, 1);
+          } else {
+            counter.innerText = value;
+          }
+        };
+        animate();
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  useEffect(() => {
+    try {
+      const timeLine = document.querySelector(".box-timeline");
+      const btnTimeLine = document.querySelector(".open-timeline");
+      const removeTimeLine = document.querySelector(".remove-timeLine");
+      console.log(timeLine , btnTimeLine , removeTimeLine);
+      btnTimeLine.addEventListener("click", function () {
+        timeLine.classList.remove("left-[-2000px]");
+      });
+      removeTimeLine.addEventListener("click", function () {
+        timeLine.classList.add("left-[-2000px]");
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
   return `
     ${Header()}
     <main class="lg:max-w-7xl md:max-w-5xl md:px-2 my-0 mx-auto">
@@ -100,7 +102,6 @@ useEffect(() =>{
       </div>
     </div>
     <!-- incrementing counter -->
-
     <div>   
     <div class="content max-w-7xl mx-3 lg:mx-0 min-h-[200px] lg:flex md:flex md:justify-evenly md:items-center lg:items-center lg:justify-around bg-gradient-to-r from-purple-400 to-pink-600">
 
