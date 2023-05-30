@@ -1,5 +1,5 @@
 import { Header } from "../components/Header"
-const NotFound = () => {
+const NotFoundPage = () => {
       return `
       ${Header()}
       <div class="grid h-screen px-4 bg-white place-content-center">
@@ -7,4 +7,4 @@ const NotFound = () => {
       </div>
       `
 }
-export default NotFound
+export default NotFoundPage

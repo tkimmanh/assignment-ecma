@@ -53,8 +53,9 @@ const AddPostPage = () => {
         content1: postContent1.value,
         content2: postContent2.value,
         author: postAuthor.value,
+        categories : "Project",
         image : urls,
-        createdAt: Date.now(),
+        createdAt: Date.now()
       };
       addNewPosts(newPost).then(() => {
           router.navigate('/blog') 
