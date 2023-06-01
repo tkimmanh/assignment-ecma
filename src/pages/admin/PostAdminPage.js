@@ -66,13 +66,12 @@ useEffect(() => {
       <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${dayjs(post.createdAt).format("DD-MM-YYYY") ?? ""}</td>
       <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${dayjs(post.updatedAt).format("DD-MM-YYYY") ?? "Chưa update"}</td>
       <td class="whitespace-nowrap px-4 py-2">
-        <a href="#" class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">Edit</a>
+          <button><a href="/admin/blog/${post.id ?? ""}/edit" class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">Edit</a></button>
         <button data-id=${post.id ?? ""} class="btn-remove inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700">Delete</button>
       </td>
     </tr>
       `
     }).join('')}
-     
     </tbody>
   </table>
 </div>
