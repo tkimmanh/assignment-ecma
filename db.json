@@ -2,13 +2,13 @@
   "posts": [
     {
       "id": 1,
-      "title": "Youtube update 2",
+      "title": "New Post",
       "content1": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eligendi temporibus beatae error aliquam consectetur non, amet at reprehenderit explicabo dolorem aliquid tempora odio. Fugit minima eum praesentium temporibus amet.</p>",
       "content2": "<p>Voluptatum, labore doloribus quas sunt nihil reiciendis quis nulla magni rerum ratione eius nam beatae consequuntur officia perferendis repellat delectus nesciunt excepturi facere dolore fugit non! Quam aliquam asperiores cumque.</p>",
       "author": "Hao Su Phu 2",
       "categories": "Project",
       "image": "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685610374/ECMA/z2w1lumwllsb70l8xtjs.jpg",
-      "updatedAt": 1685611056702
+      "updatedAt": 1685691646626
     },
     {
       "id": 2,
@@ -96,6 +96,18 @@
       "content2": "",
       "createdAt": "1685517121638",
       "updatedAt": "1685517121638"
+    },
+    {
+      "title": " HEHEHHE",
+      "content1": "",
+      "content2": "",
+      "author": "",
+      "categories": "Project",
+      "image": [
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685670999/ECMA/pctnzuynff9kn1plctzq.jpg"
+      ],
+      "createdAt": 1685670986220,
+      "id": 10
     }
   ]
 }

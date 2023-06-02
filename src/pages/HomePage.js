@@ -25,7 +25,7 @@ const HomePage = () => {
   }, []);
   return `
     ${Header()}
-  <main class="lg:max-w-7xl md:max-w-5xl md:px-2 my-0 mx-auto">
+  <main data-aos="fade-right" class="lg:max-w-7xl md:max-w-5xl md:px-2 my-0 mx-auto ">
     <!-- main-contaier -->
     <div class="main-container">
     <!-- background -->

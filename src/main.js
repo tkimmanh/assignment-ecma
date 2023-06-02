@@ -10,8 +10,8 @@ import EditPostPage from './pages/admin/EditPostPage';
 
 const app = document.getElementById('app');
 router.on('/',() => render(HomePage,app));
-router.on('/about',() => render(AboutPage,app))
-router.on('/blog',() => render(BlogPage,app))
+router.on('/about',() => render(AboutPage,app));
+router.on('/blog',() => render(BlogPage,app));
 router.on('/blog/:id',({data}) => render(() => DetailBlogPage(data.id),app))
 
 router.on('/admin/blog/add',() => render(AddPostPage,app));
