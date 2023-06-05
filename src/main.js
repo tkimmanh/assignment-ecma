@@ -7,12 +7,15 @@ import NotFoundPage from './pages/404';
 import AddPostPage from './pages/admin/AddPostPage';
 import PostAdminPage from './pages/admin/PostAdminPage';
 import EditPostPage from './pages/admin/EditPostPage';
+import LoginPage from './pages/LoginPage';
 
 const app = document.getElementById('app');
+
 router.on('/',() => render(HomePage,app));
 router.on('/about',() => render(AboutPage,app));
 router.on('/blog',() => render(BlogPage,app));
 router.on('/blog/:id',({data}) => render(() => DetailBlogPage(data.id),app))
+router.on('/login',() => render(LoginPage,app))
 
 router.on('/admin/blog/add',() => render(AddPostPage,app));
 router.on('/admin/blog/list',() => render(PostAdminPage,app))

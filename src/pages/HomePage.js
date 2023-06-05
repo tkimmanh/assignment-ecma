@@ -14,10 +14,14 @@ dayjs.extend(relativeTime);
 const HomePage = () => {
   const [posts, setPost] = useState([]);
   useEffect(() => {
-    (async () => {
+    const showLoader = document.getElementById('loader');
+    (() => {
       try {
-        const posts = await getAllPost("?_limit=3");
-        setPost(posts);
+        showLoader.classList.remove('hidden')
+        setTimeout(async () => {
+          const posts = await getAllPost("?_limit=3");
+          setPost(posts);
+        },500)
       } catch (error) {
         console.log(error);
       }
@@ -26,6 +30,17 @@ const HomePage = () => {
   return `
     ${Header()}
   <main data-aos="fade-right" class="lg:max-w-7xl md:max-w-5xl md:px-2 my-0 mx-auto ">
+
+  <!-- loader -->
+  <div id="loader" class="hidden">
+    <div class="w-full h-full fixed top-0 left-0 bg-white z-50">
+      <div class="flex justify-center items-center mt-[50vh]">
+        <div class="fas fa-circle-notch fa-spin fa-5x text-violet-600"></div>
+      </div>
+    </div>
+  </div>
+  <!-- loader -->
+
     <!-- main-contaier -->
     <div class="main-container">
     <!-- background -->
@@ -42,7 +57,7 @@ const HomePage = () => {
         <li class="blog max-w-full m-5 mx-4">
         <div class="relative">
         <img class="lg:max-w-[400px] lg:h-[250px] w-full h-[300px] hover:scale-100 object-cover rounded"
-          src="${blog.image}" alt=""/>
+          src="${Array.isArray(blog.image) ? blog.image[0] : blog.image}" alt=""/>
         <h2
           class="category absolute top-5 text-white right-5 bg-[#2125294D] px-2 font-semibold"
         >

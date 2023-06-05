@@ -6,9 +6,10 @@ import joi from "joi";
 
 const postSchema = joi.object({
   id : joi.allow(''),
-  title: joi.string().required().min(10).max(20),
+  title: joi.string().required().min(5).max(20),
   content1: joi.string().required().min(50).max(500),
   content2: joi.string().allow("").optional(),
+  author : joi.string().allow("").optional(),
   categories: joi.string(),
   image: joi.string().allow("").optional(),
   createdAt: joi.date(),

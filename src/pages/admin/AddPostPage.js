@@ -5,18 +5,15 @@ import { useEffect, router } from "../../utilities";
 import joi from "joi";
 
 const postSchema = joi.object({
-  title: joi.string().required().min(10).max(20),
-  content1: joi.string().required().min(50).max(500),
-  content2: joi.string().allow('').optional().max(500),
+  title: joi.string().required().min(5).max(20),
+  content1: joi.string().required().min(50).max(1000),
+  content2: joi.string().allow('').optional().max(1000),
   author: joi.string().required(),
   categories: joi.string(),
-  image: joi.string().allow('').optional(),
-  createdAt: joi.date()
+  image : joi.allow(''),
+  createdAt: joi.date(),
 });
 
-const uploadFile = async (files) => {
-  // Hàm upload file
-};
 
 const AddPostPage = () => {
   useEffect(() => {
@@ -38,7 +35,29 @@ const AddPostPage = () => {
     const postContent2 = document.querySelector(".content2-input");
     const postAuthor = document.querySelector(".author-input");
     const errorsElement = document.querySelector("#errors");
+    const uploadFile = async (files) => {
+      if(files) {
+        const CLOUD_NAME = 'dxg4vjwru'
+        const PRESET_NAME = 'upload-ecma'
+        const FOLDER_NAME = 'ECMA'
+        const urls = [];
+        const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
 
+        const fromData = new FormData()
+        fromData.append('upload_preset',PRESET_NAME)
+        fromData.append('folder',FOLDER_NAME)
+        for(const file of files) {
+          fromData.append('file',file)
+         const response = await axios.post(api,fromData,{
+            headers : {
+              'Content-Type' : 'multipart/from-data',
+            },
+          })
+          urls.push(response.data.secure_url)
+        }
+        return urls
+      }
+    }
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const urls = await uploadFile(postImage.files);
@@ -49,7 +68,7 @@ const AddPostPage = () => {
         author: postAuthor.value,
         categories: "Project",
         image: urls,
-        createdAt: Date.now()
+        createdAt: Date.now(),
       };
 
       const { error } = postSchema.validate(newPost, { abortEarly: false });
@@ -60,7 +79,7 @@ const AddPostPage = () => {
       }
 
       addNewPosts(newPost)
-        .then(() => {
+      .then(() => {
           router.navigate('/blog');
         })
         .catch((error) => console.log(error));

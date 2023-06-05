@@ -19,6 +19,7 @@ const PostAdminPage = () => {
     })();
   }, []);
 useEffect(() => {
+
     const btns = document.querySelectorAll('.btn-remove');
     [...btns].forEach((btn) => {
       btn.addEventListener('click',async function(e){
