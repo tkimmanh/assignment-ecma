@@ -1,43 +1,97 @@
 {
   "posts": [
     {
-      "title": "Dự án mẫu",
+      "id": 1,
+      "title": "Dự án mẫu update",
       "content1": "<p>&nbsp; Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita amet quasi, ipsa ex possimus necessitatibus natus assumenda totam veritatis consequatur ipsam nostrum provident, mollitia officiis! Esse ad facere eveniet et ex? Soluta dolor in, impedit, suscipit esse odit magnam sed itaque tempore, ipsa optio debitis totam cum animi perferendis. Beatae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita amet quasi, ipsa ex possimus necessitatibus natus assumenda totam veritatis consequatur ipsam nostrum provident, mollitia officiis! Esse ad facere eveniet et ex? Soluta dolor in, impedit, suscipit esse odit magnam sed itaque tempore, ipsa optio debitis totam cum animi perferendis. Beatae.</p>",
       "content2": "<blockquote><p><i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita amet quasi, ipsa ex possimus necessitatibus natus assumenda totam veritatis consequatur ipsam nostrum provident, mollitia officiis! Esse ad facere eveniet et ex? Soluta dolor in, impedit, suscipit esse odit magnam sed itaque tempore, ipsa optio debitis totam cum animi perferendis. Beatae.</i></p><p>&nbsp;</p><p><a href=\"GIT : https://github.com/\"><i>GIT : https://github.com/</i></a></p><p>&nbsp;</p></blockquote>",
       "author": "Tống Kim Mạnh",
-      "categories": "Project",
+      "categoryId": 1,
       "image": [
         "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685958523/ECMA/m4wg2tdncscuhy87fn42.avif",
         "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685958523/ECMA/xxshe6ecicyzgbli50ys.avif"
       ],
-      "createdAt": 1685958506815,
-      "id": 1
+      "updatedAt": 1685967972321,
+      "createdAt": 1685958506815
     },
     {
-      "title": "Project 1",
+      "id": 2,
+      "title": "PROJECT 1 update",
       "content1": "<p>&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, accusamus sunt delectus qui sapiente amet nobis in rem? Error eaque impedit non architecto. Facilis perspiciatis repudiandae soluta voluptate illum cumque! &nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, accusamus sunt delectus qui sapiente amet nobis in rem? Error eaque impedit non architecto. Facilis perspiciatis repudiandae soluta voluptate illum cumque!</p>",
       "content2": "<p>&nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, accusamus sunt delectus qui sapiente amet nobis in rem? Error eaque impedit non architecto. Facilis perspiciatis repudiandae soluta voluptate illum cumque! &nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, accusamus sunt delectus qui sapiente amet nobis in rem? Error eaque impedit non architecto. Facilis perspiciatis repudiandae soluta voluptate illum cumque!</p>",
       "author": "Tong Kim Manh",
-      "categories": "Project",
+      "categoryId": 2,
       "image": [
         "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685960061/ECMA/dhzujwik8qlvzdqcnbr1.avif",
         "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685960062/ECMA/sdyyrgezoepptabqndeq.avif",
         "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685960063/ECMA/z5kdlsgemn8kufa4n1kw.avif"
       ],
-      "createdAt": 1685960046475,
-      "id": 2
+      "updatedAt": 1685968031231,
+      "createdAt": 1685960046475
     },
     {
-      "title": "Project 2",
+      "title": "PROJECT 2",
       "content1": "<p>&nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, accusamus sunt delectus qui sapiente amet nobis in rem? Error eaque impedit non architecto. Facilis perspiciatis repudiandae soluta voluptate illum cumque!</p>",
       "content2": "<blockquote><p>&nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, accusamus sunt delectus qui sapiente amet nobis in rem? Error eaque impedit non architecto. Facilis perspiciatis repudiandae soluta voluptate illum cumque!</p><p>GIT : <a href=\"google.com\">google.com</a></p></blockquote>",
       "author": "Tong Kim Manh",
-      "categories": "Project",
+      "categoryId": 2,
       "image": [
         "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685960357/ECMA/t2glfxvhotgtjz36xbti.avif"
       ],
       "createdAt": 1685960340368,
       "id": 3
+    },
+    {
+      "title": "PROJECT 3",
+      "content1": "<p>&nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore possimus, adipisci cum labore exercitationem quod tempora dicta, laboriosam, iusto est quia aliquid tenetur nobis cupiditate laborum alias harum sit? &nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore possimus, adipisci cum labore exercitationem quod tempora dicta, laboriosam, iusto est quia aliquid tenetur nobis cupiditate laborum alias harum sit?</p>",
+      "content2": "<blockquote><p>&nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore possimus, adipisci cum labore exercitationem quod tempora dicta, laboriosam, iusto est quia aliquid tenetur nobis cupiditate laborum alias harum sit?</p><ul><li><a href=\"google.com\">google.com</a></li></ul></blockquote>",
+      "author": "Tong Kim Manh",
+      "categoryId": 2,
+      "image": [
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685976749/ECMA/qdc3kcxu0fktg9qnpxgy.avif"
+      ],
+      "createdAt": 1685976732501,
+      "id": 4
+    },
+    {
+      "title": "PROJECT 4",
+      "content1": "<p>&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid est dolorem obcaecati delectus aut perferendis tempore, eligendi esse sunt exercitationem pariatur asperiores, doloribus tenetur rem recusandae architecto aperiam nesciunt ipsam inventore quod accusantium! Nihil omnis eligendi totam veniam, atque quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid est dolorem obcaecati delectus aut perferendis tempore, eligendi esse sunt exercitationem pariatur asperiores, doloribus tenetur rem recusandae architecto aperiam nesciunt ipsam inventore quod accusantium! Nihil omnis eligendi totam veniam, atque quasi.</p>",
+      "content2": "<p><i>&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid est dolorem obcaecati delectus aut perferendis tempore, eligendi esse sunt exercitationem pariatur asperiores, doloribus tenetur rem recusandae architecto aperiam nesciunt ipsam inventore quod accusantium! Nihil omnis eligendi totam veniam, atque quasi.</i></p>",
+      "author": "Manh",
+      "categoryId": 1,
+      "image": [
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686104822/ECMA/ge1zcjw9frm4v6xeu99h.avif",
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686104823/ECMA/efq7veheshshw9mstlxf.avif",
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686104824/ECMA/cglbz7hvgtxms0qpom4t.avif",
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686104825/ECMA/ncnifvvu7obfskhmekga.avif"
+      ],
+      "createdAt": 1686104807298,
+      "id": 5
+    },
+    {
+      "title": "PROJECT 3",
+      "content1": "<p>&nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore possimus, adipisci cum labore exercitationem quod tempora dicta, laboriosam, iusto est quia aliquid tenetur nobis cupiditate laborum alias harum sit? &nbsp; &nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore possimus, adipisci cum labore exercitationem quod tempora dicta, laboriosam, iusto est quia aliquid tenetur nobis cupiditate laborum alias harum sit?</p>",
+      "content2": "<blockquote><p>&nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore possimus, adipisci cum labore exercitationem quod tempora dicta, laboriosam, iusto est quia aliquid tenetur nobis cupiditate laborum alias harum sit?</p><ul><li><a href=\"google.com\">google.com</a></li></ul></blockquote>",
+      "author": "Tong Kim Manh",
+      "categoryId": 2,
+      "image": [
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1685976749/ECMA/qdc3kcxu0fktg9qnpxgy.avif"
+      ],
+      "createdAt": 1685976732501,
+      "id": 5
+    },
+    {
+      "title": "Project 5",
+      "content1": "<p>&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.</p>",
+      "content2": "<blockquote><p><i>&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.</i></p></blockquote>",
+      "author": "Manh",
+      "categories": "1",
+      "image": [
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686150942/ECMA/tntsbkbq4n6hzeom1qg0.avif",
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686150943/ECMA/ihaydtdnzq73admn9hhq.avif"
+      ],
+      "createdAt": 1686150924145,
+      "id": 6
     }
   ],
   "users": [
@@ -50,6 +104,16 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$mlALIvYxIiEXJLwondZPWOqfNgG4eajtI4ooZIlDHJvoTYDM1QDKK",
       "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "PROJECT"
+    },
+    {
+      "id": 2,
+      "name": "CREATIVE"
     }
   ]
 }

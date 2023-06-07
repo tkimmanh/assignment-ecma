@@ -56,6 +56,5 @@ export const Header = () => {
       </div>
     </div>
     <!-- end header-container -->
-  </header>
-    `
+  </header>`
 }

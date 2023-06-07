@@ -19,7 +19,7 @@ const HomePage = () => {
       try {
         showLoader.classList.remove('hidden')
         setTimeout(async () => {
-          const posts = await getAllPost("?_limit=3");
+          const posts = await getAllPost("?_sort=createdAt&_order=desc&_limit=3");
           setPost(posts);
         },500)
       } catch (error) {
@@ -61,7 +61,7 @@ const HomePage = () => {
         <h2
           class="category absolute top-5 text-white right-5 bg-[#2125294D] px-2 font-semibold"
         >
-         ${blog.categories}
+         ${blog.categoryId === 1 ? "PROJECT" : "CREATIVE"}
         </h2>
       </div>
       <div class="date my-3">
@@ -72,8 +72,8 @@ const HomePage = () => {
       <div class="title hover:underline font-bold font-[Poppins] text-xl text-[#21243D] my-3">
         <a href="/blog/${blog.id}">${blog.title}</a>
       </div>
-      <div class="desc">
-        <p class="font-thin text-sm">
+      <div class="desc font-thin text-sm">
+        <p class="font-thin text-sm ">
           ${truncateText(blog.content1, 90)}
         </p>
       </div>

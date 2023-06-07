@@ -7,9 +7,12 @@ const Timeline = () => {
           const removeTimeLine = document.querySelector(".remove-timeLine");
           btnTimeLine.addEventListener("click", function () {
             timeLine.classList.add("left-0");
+            timeLine.classList.remove("left-[-2000px]");
           });
           removeTimeLine.addEventListener("click", function () {
             timeLine.classList.remove("left-0");
+            timeLine.classList.add("left-[-2000px]");
+
           });
         } catch (error) {
           console.log(error);

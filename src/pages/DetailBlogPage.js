@@ -5,7 +5,6 @@ import { router, useEffect, useState } from "../utilities";
 import { getOnePost } from "../api/posts";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
-
 dayjs.extend(relativeTime);
 
 const DetailBlogPage = (id) => {
@@ -26,25 +25,23 @@ const DetailBlogPage = (id) => {
   return `
     ${Header()}
 <div class="container max-w-6xl px-12 py-7 leading-loose mx-auto font-[Poppins] ">
-
   <!-- loader -->
   ${Loader()}
   <!-- loader -->
-
-  <h1 class="font-bold text-3xl my-3">${post.title}</h1>
+  <h1 class="font-bold text-3xl my-3">${post.title ?? ""}</h1>
   <span class="font-normal text-[#49505780] mb-2">Date : ${dayjs(post.createdAt).fromNow()}</span>
 
-  <p>${post.content1}</p>
+  <p>${post.content1 ?? ""}</p>
   ${Array.isArray(post.image)
       ? post.image
-          .map((imageUrl) => `<img class="my-5" src="${imageUrl}" alt="">`)
+          .map((imageUrl) => `<img class="my-5" src="${imageUrl ?? ""} " alt="">`)
           .join("")
-      : `<img src="${post.image}" alt="">`
+      : `<img src="${post.image ?? ""}" alt="">`
   }
   <p>
-    ${post.content2}
+    ${post.content2 ?? ""}
   </p>
-  <h1 class="text-center my-6 text-xl">Author : ${post.author}</h1>     
+  <h1 class="text-center my-6 text-xl">Author : ${post.author ?? ""}</h1>     
 </div>
 ${Footer()}
 `;

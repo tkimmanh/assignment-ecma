@@ -1,4 +1,5 @@
 import { deletePost, getAllPost } from "../../api/posts";
+import Loader from "../../components/Loader";
 import HeaderAdmin from "../../components/admin/Header-Admin";
 import { useEffect, useState } from "../../utilities";
 import { truncateText } from "../../utilities/common";
@@ -19,7 +20,7 @@ const PostAdminPage = () => {
     })();
   }, []);
 useEffect(() => {
-
+    const showLoader = document.getElementById('loader')
     const btns = document.querySelectorAll('.btn-remove');
     [...btns].forEach((btn) => {
       btn.addEventListener('click',async function(e){
@@ -30,6 +31,7 @@ useEffect(() => {
           await deletePost(id)
           const newList = posts.filter((post) => post.id !== +id)
           setPosts(newList)
+          showLoader.classList.remove('hidden')
         } catch (error) {
           console.log(error);
         }
@@ -40,6 +42,7 @@ useEffect(() => {
   ${HeaderAdmin()}
   <h1 class="text-center font-bold text-2xl my-5">List Post</h1>
     <div class="overflow-x-auto">
+     ${Loader()}
   <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
 
     <thead class="ltr:text-left rtl:text-right">

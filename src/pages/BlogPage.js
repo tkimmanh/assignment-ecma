@@ -7,25 +7,37 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
+import { getAllCategories } from "../api/categories";
 dayjs.extend(relativeTime);
 
 const BlogPage = () => {
   const [posts, setPost] = useState([]);
+  const [limit , setLimit] = useState(3)
   useEffect(() => {
     const showLoader = document.getElementById('loader');
     (() => {
       try {
        showLoader.classList.remove('hidden')
        setTimeout(async () => {
-        const posts = await getAllPost("");
+        const posts = await getAllPost(`?_page=1&_limit=${limit}`);
         setPost(posts);
         showLoader.classList.add('hidden')
        },500)
+      
       } catch (error) {
         console.log(error);
       }
     })();
-  }, []);
+  }, [limit]);
+
+  function handleLoadMore() {
+    setLimit(limit + 3);
+  }
+useEffect(() => {
+   const loadMore = document.querySelector('.btn-loadMore')
+   loadMore.addEventListener('click', handleLoadMore)
+})
+
   useEffect(() => {
     const filterInput = document.querySelector(".search-input");
     const loader = document.querySelector('.loader')
@@ -45,10 +57,45 @@ const BlogPage = () => {
     }, 500);
     filterInput.addEventListener("keyup", handleFilterChange);
   });
+  
+useEffect(() => {
+  const postSort = document.querySelector('.btn-filter')
+  postSort.addEventListener('click',async function() {
+    try {
+     const posts = await getAllPost('?_sort=createdAt&_order=desc')
+     setPost(posts)
+    } catch (error) {
+      console.log(error);
+    }
+  })
+})
+const [category , setCategory ] = useState([])
+ useEffect(() => {
+  (async () =>{
+    try {
+      const category = await getAllCategories('')
+      setCategory(category)
+    } catch (error) {
+      console.log(error);
+    } 
+  })()
+ },[])
 
   return `
     ${Header()}
     <div class="lg:max-w-7xl md:max-w-5xl md:px-2 my-0 mx-auto min-h-screen"> 
+    
+    <button class="btn-filter float-right"><i class="text-2xl fa-solid fa-clock-rotate-left"></i></button>
+    <div class="float-right mx-2 mt-1">
+    <select name="" id="" onchange="if (this.value) window.location.href=this.value">
+    <option value="">Select</option>
+    ${category.map((cate) => {
+      return `
+        <option value="/cate/${cate.id}">${cate.name}</option>
+      `
+    }).join('')}
+  </select>
+    </div>
     ${Loader()}
   <label for="Search" class="relative w-[400px] mx-auto block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
 
@@ -74,7 +121,7 @@ const BlogPage = () => {
     <h2
       class="category absolute top-5 text-white right-5 bg-[#2125294D] px-2 font-semibold"
     >
-     ${blog.categories}
+     ${blog.categoriesId === 1 ? "PROJECT" : "CREATIVE"}
     </h2>
   </div>
   <div class="date my-3">
@@ -101,6 +148,8 @@ const BlogPage = () => {
      })
      .join("")}
   </ul>
+  <div class="w-full mx-auto block">
+  <button class="btn-loadMore bg-green-400 py-2 px-1 rounded">Load more</button>
   </div>
   ${Footer()}
     `;
