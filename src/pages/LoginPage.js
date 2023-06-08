@@ -21,7 +21,7 @@ const LoginPage = () => {
         router.navigate('blog')
      }
       alert('Đăng nhập thành công')
-      localStorage.setItem('emailUser', user.email);
+      localStorage.setItem('userLogin', JSON.stringify(data));
       } catch (error) {
       alert('Có biến rồi đại vương ơi');
       console.log(error);

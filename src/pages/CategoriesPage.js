@@ -51,7 +51,7 @@ const CategoriesPage = ({id}) => {
     <h2
       class="category absolute top-5 text-white right-5 bg-[#2125294D] px-2 font-semibold"
     >
-     ${blog.categoriesId === 1 ? "PROJECT" : "CREATIVE"}
+     ${blog.categoryId === 1 ? "PROJECT" : "CREATIVE"}
     </h2>
   </div>
   <div class="date my-3">

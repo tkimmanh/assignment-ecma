@@ -10,7 +10,15 @@ import EditPostPage from './pages/admin/EditPostPage';
 import LoginPage from './pages/LoginPage';
 import CategoriesPage from './pages/CategoriesPage';
 
-
+//private router 
+router.on("/admin/*", () => {},{
+    before(next) {
+        const { user } = JSON.parse(localStorage.getItem("userLogin")) || {}
+        if(!user) return (window.location.href = "/")
+        if(!user && user.id === 2 ) return (window.location.href = "/admin/blog/list");
+        next();
+    }
+})
 router.on('/',() => render(HomePage,app));
 router.on('/about',() => render(AboutPage,app));
 router.on('/blog',() => render(BlogPage,app));

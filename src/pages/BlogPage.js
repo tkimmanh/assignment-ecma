@@ -14,16 +14,18 @@ const BlogPage = () => {
   const [posts, setPost] = useState([]);
   const [limit , setLimit] = useState(3)
   useEffect(() => {
+    const handleBtn = document.querySelector('.wrapper-btn');
+    handleBtn.classList.add('hidden')
     const showLoader = document.getElementById('loader');
-    (() => {
+    (async () => {
       try {
-       showLoader.classList.remove('hidden')
-       setTimeout(async () => {
+        showLoader.classList.remove('hidden')
+        setTimeout(async () => {
         const posts = await getAllPost(`?_page=1&_limit=${limit}`);
+        handleBtn.classList.remove('hidden')
         setPost(posts);
         showLoader.classList.add('hidden')
-       },500)
-      
+       },200)
       } catch (error) {
         console.log(error);
       }
@@ -49,7 +51,7 @@ useEffect(() => {
             const filteredPosts = await getAllPost(`?title_like=${e.target.value}`)
             setPost(filteredPosts);
             loader.classList.add('hidden');
-          },500)
+          },200)
         }
       } catch (error) {
         console.log(error);
@@ -121,7 +123,7 @@ const [category , setCategory ] = useState([])
     <h2
       class="category absolute top-5 text-white right-5 bg-[#2125294D] px-2 font-semibold"
     >
-     ${blog.categoriesId === 1 ? "PROJECT" : "CREATIVE"}
+     ${blog.categoryId === 1 ? "PROJECT" : "CREATIVE"}
     </h2>
   </div>
   <div class="date my-3">
@@ -148,8 +150,8 @@ const [category , setCategory ] = useState([])
      })
      .join("")}
   </ul>
-  <div class="w-full mx-auto block">
-  <button class="btn-loadMore bg-green-400 py-2 px-1 rounded">Load more</button>
+  <div class="wrapper-btn w-full">
+  <button class="btn-loadMore mx-auto bg-green-500 text-white py-2 px-1 rounded">Load more</button>
   </div>
   ${Footer()}
     `;
