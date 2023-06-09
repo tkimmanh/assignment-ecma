@@ -1,6 +1,7 @@
 import axios from "axios";
 const instance = axios.create({
-    baseURL : "http://localhost:3999/"
+    baseURL : "http://localhost:3999/",
+    withCredentials: true,
 })
 // Thêm một bộ đón chặn request
 instance.interceptors.request.use(function (config) {

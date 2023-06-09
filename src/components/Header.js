@@ -1,5 +1,22 @@
-import { useEffect } from '../utilities'
+import { logout } from '../api/user'
+import { useEffect, useState , router } from '../utilities'
+import { truncateText } from '../utilities/common'
 export const Header = () => {
+  const { user } = JSON.parse(localStorage.getItem('userLogin')) || {}
+  useEffect(() => {
+    const btnLogout = document.querySelectorAll('.btn-logout');
+    [...btnLogout].forEach((btn) => {
+     btn.addEventListener('click',function(){
+        try {
+          localStorage.removeItem('userLogin')
+          router.navigate('/')
+        } catch (error) {
+          console.log('Đăng xuất thất bại');
+          console.log(error);
+        }
+}) 
+    })
+  })
     return `
     <header>
     <div class="header-container flex justify-between my-2 lg:max-w-7xl mx-auto">
@@ -11,6 +28,7 @@ export const Header = () => {
           alt=""
         />
       </div>
+    
       <!-- nav -->
       <div class="main-nav mt-4">
         <a
@@ -36,6 +54,7 @@ export const Header = () => {
       </div>
       <!-- info -->
       <div class="main-info mt-4">
+     
         <a class="mx-1" href="">
           <box-icon
             class="text-[#49505780]"
@@ -54,7 +73,16 @@ export const Header = () => {
           <box-icon class="text-[#49505780]" name="envelope"></box-icon>
         </a>
       </div>
+      ${user ? `
+      <div class="login">
+      <i class="fa-solid fa-user fa-lg" style="color: #005af5;"></i>
+      <span>${truncateText(user.email,10 ?? "")}</span>
+      <button class="btn-logout bg-green-400 px-2 py-1 rounded text-white">Logout</button>
+      </div>
     </div>
+      ` : ""}
+    <button class="btn-logout hidden bg-green-400 px-2 py-1 rounded text-white">Logout</button>
     <!-- end header-container -->
   </header>`
 }
+export default Header

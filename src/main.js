@@ -9,12 +9,13 @@ import PostAdminPage from './pages/admin/PostAdminPage';
 import EditPostPage from './pages/admin/EditPostPage';
 import LoginPage from './pages/LoginPage';
 import CategoriesPage from './pages/CategoriesPage';
+import SignupPage from './pages/SignupPage';
 
 //private router 
 router.on("/admin/*", () => {},{
     before(next) {
-        const { user } = JSON.parse(localStorage.getItem("userLogin")) || {}
-        if(!user) return (window.location.href = "/")
+        const  {user}  = JSON.parse(localStorage.getItem("userLogin")) || {}
+        if(!user || user.id !== 2 ) return (window.location.href = "/")
         if(!user && user.id === 2 ) return (window.location.href = "/admin/blog/list");
         next();
     }
@@ -25,6 +26,8 @@ router.on('/blog',() => render(BlogPage,app));
 router.on('/blog/:id',({data}) => render(() => DetailBlogPage(data.id),app))
 router.on('/cate/:id',({data}) => render(() => CategoriesPage(data),app))
 router.on('/login',() => render(LoginPage,app))
+router.on('/signup',() => render(SignupPage,app))
+
 
 router.on('/admin/blog/add',() => render(AddPostPage,app));
 router.on('/admin/blog/list',() => render(PostAdminPage,app));

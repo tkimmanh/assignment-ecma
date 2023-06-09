@@ -151,7 +151,7 @@ const [category , setCategory ] = useState([])
      .join("")}
   </ul>
   <div class="wrapper-btn w-full">
-  <button class="btn-loadMore mx-auto bg-green-500 text-white py-2 px-1 rounded">Load more</button>
+  <button class="btn-loadMore mx-auto bg-green-400 text-white py-2 px-1 rounded">Load more</button>
   </div>
   ${Footer()}
     `;

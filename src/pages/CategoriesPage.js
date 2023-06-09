@@ -14,7 +14,7 @@ const CategoriesPage = ({id}) => {
     (async () => {
       try {
         const category = await getAllCategories(`/${id}?_embed=posts`);
-        console.log(category.posts);
+        // console.log(category.posts);
         setCategory(category);
       } catch (error) {
         console.log(error);
