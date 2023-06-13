@@ -1,8 +1,10 @@
 import { signin } from "../api/user";
 import { Header } from "../components/Header";
+import Loader from "../components/Loader";
 import { router, useEffect } from "../utilities";
 const LoginPage = () => {
   useEffect (() => {
+    const showLoader = document.querySelector('#loader')
     const from = document.querySelector('.from-login')
     const email = document.querySelector('.input-email')
     const password = document.querySelector('.input-pass')
@@ -14,17 +16,19 @@ const LoginPage = () => {
         password : password.value
       }
       try {
-     const data = await signin(user)
-     if(data.user.id === 2){
-       router.navigate('admin/blog/list')
-      } else {
-        router.navigate('blog')
-     }
+      showLoader.classList.remove('hidden')
+      const data = await signin(user)
       alert('Đăng nhập thành công')
       localStorage.setItem('userLogin', JSON.stringify(data));
+      if(data.user.id === 2){
+        router.navigate('admin/blog/list')
+       } else {
+         router.navigate('blog')
+      }
       } catch (error) {
-      alert('Có biến rồi đại vương ơi');
-      console.log(error);
+        showLoader.classList.add('hidden')
+        alert('Có biến rồi đại vương ơi');
+        console.log(error);
       }
     })
   },[])
@@ -33,7 +37,7 @@ const LoginPage = () => {
  <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
 </h1>
 <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-
+  ${Loader()}
   <div class="mx-auto max-w-lg text-center">
     <h1 class="text-2xl font-bold sm:text-3xl">Get started today!</h1>
 

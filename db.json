@@ -81,29 +81,17 @@
       "id": 5
     },
     {
-      "title": "Project 5",
-      "content1": "<p>&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.</p>",
-      "content2": "<blockquote><p><i>&nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.ipsum dolor sit, amet consectetur adipisicing elit. Labore quo eligendi iure at dignissimos cumque cum reiciendis repellendus officia et.</i></p></blockquote>",
-      "author": "Manh",
-      "categories": "1",
+      "id": 6,
+      "title": "Bai viet nay cung khong hay lam",
+      "content1": "<p>&nbsp; Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus quam dicta eaque ea quia natus culpa libero, itaque officia minus sint labore optio cumque iste magni ullam tempore ex expedita. &nbsp; &nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus quam dicta eaque ea quia natus culpa libero, itaque officia minus sint labore optio cumque iste magni ullam tempore ex expedita.</p>",
+      "content2": "<p>&nbsp; Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus quam dicta eaque ea quia natus culpa libero, itaque officia minus sint labore optio cumque iste magni ullam tempore ex expedita. &nbsp; &nbsp;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus quam dicta eaque ea quia natus culpa libero, itaque officia minus sint labore optio cumque iste magni ullam tempore ex expedita.</p>",
+      "author": "Tong Kim Manh",
+      "categories": "Project",
       "image": [
-        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686150942/ECMA/tntsbkbq4n6hzeom1qg0.avif",
-        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686150943/ECMA/ihaydtdnzq73admn9hhq.avif"
+        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686644378/ECMA/kehe4p3zzirv1pttklj3.avif"
       ],
-      "createdAt": 1686150924145,
-      "id": 6
-    },
-    {
-      "title": "OK BROO HEHE",
-      "content1": "<p>&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum autem minima at. Impedit, libero quia beatae, consequatur laboriosam pariatur unde delectus, dolorem assumenda fugit iusto sequi optio repudiandae debitis deleniti! &nbsp; &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum autem minima at. Impedit, libero quia beatae, consequatur laboriosam pariatur unde delectus, dolorem assumenda fugit iusto sequi optio repudiandae debitis deleniti!</p>",
-      "content2": "<p>&nbsp; &nbsp; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum autem minima at. Impedit, libero quia beatae, consequatur laboriosam pariatur unde delectus, dolorem assumenda fugit iusto sequi optio repudiandae debitis deleniti! &nbsp; &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum autem minima at. Impedit, libero quia beatae, consequatur laboriosam pariatur unde delectus, dolorem assumenda fugit iusto sequi optio repudiandae debitis deleniti!</p>",
-      "author": "Manh",
-      "categories": "2",
-      "image": [
-        "https://res.cloudinary.com/dxg4vjwru/image/upload/v1686295326/ECMA/cgcfz3nq5ecqmxhdwhjh.avif"
-      ],
-      "createdAt": 1686295305332,
-      "id": 7
+      "updatedAt": 1686645095689,
+      "createdAt": 1686644351813
     }
   ],
   "users": [
@@ -121,21 +109,6 @@
       "email": "manh@gmail.com",
       "password": "$2a$10$3ySXx0QYhg4mqdiHAOmUa.jO7SrJmibc3d/CnkgEL0bMvCE4BRaR6",
       "id": 3
-    },
-    {
-      "email": "tkmanh@gmail.com",
-      "password": "$2a$10$QLmstzzh8IgOF4.HetFx4.oIt7NcWUQSKUBLv0WZeSylpqOKf..aK",
-      "id": 4
-    },
-    {
-      "email": "tkmanh1@gmail.com",
-      "password": "$2a$10$CDGKoIpzSgojb5.uH2PusO7rn5easln1R0rWEEjacaNDjki5fwNd2",
-      "id": 5
-    },
-    {
-      "email": "tkmanh2@gmail.com",
-      "password": "$2a$10$7O4uS5DEgo9yBjzfPcjKvejW86o7PKHAI96yBwvPudaoRg0TG1nOy",
-      "id": 6
     }
   ],
   "categories": [

@@ -1,4 +1,10 @@
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+
 const AboutPage = () => {
-    return `AboutPage`
-}
-export default AboutPage
+  return `
+     ${Header()}
+     
+    `;
+};
+export default AboutPage;

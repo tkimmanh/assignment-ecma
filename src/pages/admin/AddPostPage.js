@@ -13,6 +13,7 @@ const postSchema = joi.object({
   categories: joi.string(),
   image: joi.allow(""),
   createdAt: joi.date(),
+  categoryId: joi.number(),
 });
 
 const AddPostPage = () => {
@@ -34,7 +35,7 @@ const AddPostPage = () => {
     const postImage = document.querySelector(".image-input");
     const postContent2 = document.querySelector(".content2-input");
     const postAuthor = document.querySelector(".author-input");
-    const postCategories = document.querySelector('.categories');
+    const postCategories = document.querySelector(".categories");
     const errorsElement = document.querySelector("#errors");
     const showLoader = document.getElementById("loader");
     const uploadFile = async (files) => {
@@ -68,7 +69,7 @@ const AddPostPage = () => {
         content1: postContent1.value,
         content2: postContent2.value,
         author: postAuthor.value,
-        categories: postCategories.value,
+        categoryId: postCategories.value,
         image: urls,
         createdAt: Date.now(),
       };
@@ -80,15 +81,14 @@ const AddPostPage = () => {
         return;
       }
       try {
-        await addNewPosts(newPost)
-        showLoader.classList.remove('hidden');
-        router.navigate('/admin/blog/list');
-        alert('Thêm sản phẩm thành công')
-        } catch (error) {
-          console.log(error);
-        }  
-      
-      })   
+        await addNewPosts(newPost);
+        showLoader.classList.remove("hidden");
+        router.navigate("/admin/blog/list");
+        alert("Thêm sản phẩm thành công");
+      } catch (error) {
+        console.log(error);
+      }
+    });
   });
 
   return `

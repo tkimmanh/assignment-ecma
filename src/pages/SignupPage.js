@@ -1,8 +1,10 @@
 import { signup } from "../api/user"
 import { Header } from "../components/Header"
 import { useState , useEffect , router } from "../utilities"
+import Loader from "../components/Loader"
 const SignupPage = () => {
   useEffect (() => {
+    const showLoader = document.getElementById('loader');
     const from = document.querySelector('.from-login')
     const email = document.querySelector('.input-email')
     const password = document.querySelector('.input-pass')
@@ -13,11 +15,13 @@ const SignupPage = () => {
         password : password.value
       }
       try {
+      showLoader.classList.remove('hidden')
       await signup(user)
       alert('Đăng ký thành công')
       window.location.href = "/login"
       } catch (error) {
       alert('Đăng ký thất bại');
+      showLoader.classList.add('hidden') 
       console.log(error);
       }
     })
@@ -27,7 +31,7 @@ const SignupPage = () => {
  <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
 </h1>
 <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-
+   ${Loader()}
   <div class="mx-auto max-w-lg text-center">
     <h1 class="text-2xl font-bold sm:text-3xl">Signup</h1>
 

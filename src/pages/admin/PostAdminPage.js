@@ -1,3 +1,4 @@
+import { getAllCategories } from "../../api/categories";
 import { deletePost, getAllPost } from "../../api/posts";
 import Loader from "../../components/Loader";
 import HeaderAdmin from "../../components/admin/Header-Admin";
@@ -64,7 +65,7 @@ useEffect(() => {
       <tr>
       <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-center">${truncateText(post.title,30)  ?? ""}</td>
       <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${truncateText(post.author,20) ?? "Trống"}</td>
-      <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${post.categories ?? "Trống"}</td>
+      <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${post.categoryId === 1 ? 'PROJECT' : 'CREATIVE' }</td>
       <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${truncateText(post.content1,40) ?? "Trống"}</td>
       <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${truncateText(post.content2,40) ?? "Trống"}</td>
       <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">${dayjs(post.createdAt).format("DD-MM-YYYY") ?? ""}</td>

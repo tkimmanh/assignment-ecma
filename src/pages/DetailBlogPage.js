@@ -2,21 +2,25 @@ import { Header } from "../components/Header";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { router, useEffect, useState } from "../utilities";
-import { getOnePost } from "../api/posts";
+import { getAllPost, getOnePost } from "../api/posts";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
+import CategoriesPage from "./FillterPage";
+import { getAllCategories } from "../api/categories";
+import { truncateText } from "../utilities/common";
+import RelatedPostsPage from "./RelatedPosts";
 dayjs.extend(relativeTime);
 
 const DetailBlogPage = (id) => {
   const [post, setPost] = useState([]);
   useEffect(() => {
-    const showLoader = document.getElementById('loader');
-    ( () => {
+    const showLoader = document.getElementById("loader");
+    (() => {
       try {
-        showLoader.classList.remove('hidden')
+        showLoader.classList.remove("hidden");
         setTimeout(async () => {
           setPost(await getOnePost(id));
-       },300)
+        }, 300);
       } catch (error) {
         console.log(error);
       }
@@ -29,12 +33,17 @@ const DetailBlogPage = (id) => {
   ${Loader()}
   <!-- loader -->
   <h1 class="font-bold text-3xl my-3">${post.title ?? ""}</h1>
-  <span class="font-normal text-[#49505780] mb-2">Date : ${dayjs(post.createdAt).fromNow()}</span>
+  <span class="font-normal text-[#49505780] mb-2">Date : ${dayjs(
+    post.createdAt
+  ).fromNow()}</span>
 
   <p>${post.content1 ?? ""}</p>
-  ${Array.isArray(post.image)
+  ${
+    Array.isArray(post.image)
       ? post.image
-          .map((imageUrl) => `<img class="my-5" src="${imageUrl ?? ""} " alt="">`)
+          .map(
+            (imageUrl) => `<img class="my-5" src="${imageUrl ?? ""} " alt="">`
+          )
           .join("")
       : `<img src="${post.image ?? ""}" alt="">`
   }
@@ -43,6 +52,7 @@ const DetailBlogPage = (id) => {
   </p>
   <h1 class="text-center my-6 text-xl">Author : ${post.author ?? ""}</h1>     
 </div>
+ ${RelatedPostsPage(post.categoryId)}
 ${Footer()}
 `;
 };

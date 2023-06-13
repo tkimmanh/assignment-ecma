@@ -75,12 +75,12 @@ export const Header = () => {
       </div>
       ${user ? `
       <div class="login">
-      <i class="fa-solid fa-user fa-lg" style="color: #005af5;"></i>
+       <img class="inline rounded" src="https://i.pravatar.cc/50" />
       <span>${truncateText(user.email,10 ?? "")}</span>
       <button class="btn-logout bg-green-400 px-2 py-1 rounded text-white">Logout</button>
       </div>
     </div>
-      ` : ""}
+      ` : "<a class='mt-3' href='/login'>Login</a>"}
     <button class="btn-logout hidden bg-green-400 px-2 py-1 rounded text-white">Logout</button>
     <!-- end header-container -->
   </header>`
